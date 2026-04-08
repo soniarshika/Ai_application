@@ -14,7 +14,7 @@ COPY requirements.txt ../requirements.txt
 RUN pip install --no-cache-dir -r ../requirements.txt
 
 # Copy backend source
-COPY backend/ ./
+COPY . ./
 
 # ChromaDB data persisted via a named volume (see docker-compose.yml)
 VOLUME ["/app/chroma_db"]
