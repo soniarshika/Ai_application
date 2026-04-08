@@ -1,0 +1,23 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Node
+frontend/react-app/node_modules/
+frontend/react-app/dist/
+
+# Data (mounted as volume in production)
+chroma_db/
+
+# Dev/editor
+.env
+.git/
+.gitignore
+*.md
+.vscode/
+.idea/
+
