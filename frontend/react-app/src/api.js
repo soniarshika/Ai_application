@@ -1,3 +1,5 @@
+const BASE = import.meta.env.VITE_API_BASE_URL || '';
+
 // ── Token storage ─────────────────────────────────────────────────────────
 export const token = {
   get:    ()      => localStorage.getItem('auth_token'),
