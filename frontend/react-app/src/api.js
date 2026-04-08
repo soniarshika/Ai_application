@@ -17,7 +17,7 @@ async function request(method, path, opts = {}) {
 
   // Don't set Content-Type for FormData — browser sets it with boundary
   try {
-    const res  = await fetch(path, { method, ...opts, headers });
+    const res  = await fetch(`${BASE}${path}`, { method, ...opts, headers });
     const ct   = res.headers.get('content-type') || '';
     const data = ct.includes('application/json') ? await res.json() : await res.text();
 
