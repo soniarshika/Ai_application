@@ -48,11 +48,12 @@ def compute_confidence(similarities: np.ndarray) -> float:
     return round(float(np.clip(float(top_k[0]) * 0.6 + float(np.mean(top_k)) * 0.4, 0.0, 1.0)), 4)
 
 
-_DEFAULT_CHROMA_DIR = os.environ.get(
-    "CHROMA_DIR",
-    str(Path(__file__).parent.parent / "chroma_db"),
-)
+# _DEFAULT_CHROMA_DIR = os.environ.get(
+#     "CHROMA_DIR",
+#     str(Path(__file__).parent.parent / "chroma_db"),
+# )
 
+_DEFAULT_CHROMA_DIR = os.getenv("CHROMA_DIR", "/app/chroma_db")
 
 class DocumentRetriever:
     def __init__(self, persist_dir: str = _DEFAULT_CHROMA_DIR):

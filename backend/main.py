@@ -78,6 +78,15 @@ app = FastAPI(
     redoc_url="/api-redoc",  # move ReDoc away too
 )
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://ai-application-ten.vercel.app"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 @app.get("/health")
 def health_check():
     return {
@@ -391,9 +400,6 @@ if _STATIC_DIR.exists():
         return FileResponse(str(_STATIC_DIR / "index.html"))
 
 
-# ------------------------------------------------------------------
-# Dev entry point
-# ------------------------------------------------------------------
 
 if __name__ == "__main__":
     import uvicorn
