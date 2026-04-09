@@ -52,6 +52,13 @@ An AI system for logistics document processing — upload PDFs, DOCX, or TXT fil
 | Containerisation | Docker + Docker Compose |
 
 ---
+## Hosted link
+
+I have hosted this app here: 
+Frontend: https://ai-application-ten.vercel.app 
+
+Backend: https://ai-application-fdcp.onrender.com
+
 
 ## Chunking Strategy
 
